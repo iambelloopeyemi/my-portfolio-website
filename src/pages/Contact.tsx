@@ -1,17 +1,24 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import emailjs from "@emailjs/browser";
-import { validationSchema } from '../utils/Schema'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { validationSchema } from "../utils/Schema";
 
 const EMAILJS_SERVICE_ID = "service_us1s3ll";
 const EMAILJS_TEMPLATE_ID = "template_qcd4h7j";
 const EMAILJS_PUBLIC_KEY = "3KaWlGfqiidm4CWPJ";
 
+interface ContactFormValues {
+  name: string;
+  email: string;
+  message: string;
+}
+
 export default function Contact() {
-  const handleSubmit = async (values: {
-    name: string;
-    email: string;
-    message: string;
-  }) => {
+  const handleSubmit = async (
+    values: ContactFormValues,
+    formikHelpers: FormikHelpers<ContactFormValues>
+  ) => {
     try {
       const templateParams = {
         from_name: values.name,
@@ -26,12 +33,18 @@ export default function Contact() {
         EMAILJS_PUBLIC_KEY
       );
       console.log("Email sent successfully!", response);
-      alert("Email sent successfully!");
+      toast.success("Email sent successfully!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      formikHelpers.resetForm();
     } catch (error) {
       console.error("Failed to send email.", error);
-      alert("Failed to send email.");
+      toast.error("Failed to send email.", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
+
   return (
     <section className="bg-very-light-gray px-16 pt-28 pb-8">
       <div className="mb-5">
@@ -118,6 +131,7 @@ export default function Contact() {
           </Form>
         </Formik>
       </section>
+      <ToastContainer />
     </section>
   );
 }
