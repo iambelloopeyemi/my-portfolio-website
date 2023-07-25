@@ -9,7 +9,7 @@ interface ButtonProps {
 
 export default function Button({ name, url, backgroundColor, border }: ButtonProps) {
   return (
-    <Link to={url}>
+    <Link to={url} target="_blank">
       <button style={{backgroundColor: backgroundColor, border: border}} className="rounded px-16 py-3 font-bold">
         {name}
       </button>

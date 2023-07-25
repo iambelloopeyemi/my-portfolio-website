@@ -5,6 +5,7 @@ import GitHubButton from "./Button";
 interface ProjectProps {
   subTitle: string;
   article: string;
+  thumbnail: string;
   view: string;
   hostedUrl: string;
   github: string;
@@ -14,6 +15,7 @@ interface ProjectProps {
 export default function Project({
   subTitle,
   article,
+  thumbnail,
   view,
   hostedUrl,
   github,
@@ -23,7 +25,7 @@ export default function Project({
     <div className="grid grid-flow-col grid-cols-2 gap-10 mb-5">
       <section className="border">
         <div className="h-80 w-80">
-          <img className="h-full w-full" src="" alt="" />
+          <img className="h-full w-full object-contain" src={thumbnail} alt="" />
         </div>
       </section>
       <section>

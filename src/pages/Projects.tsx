@@ -1,4 +1,7 @@
 import Project from "../components/Project";
+import Cash2go from "../assets/cash2go.png";
+import starWarsMovies from "../assets/star_wars_movie.png";
+import portfolioWebsite from "../assets/portfolio_website.png";
 
 export default function Projects() {
   return (
@@ -17,10 +20,11 @@ export default function Projects() {
             have been featured on some of the biggest tech sites like
             CSS-Tricks, Hostinger, etc & used by thousands of developers
             globally"
+          thumbnail={Cash2go}
           view="VIEW"
-          hostedUrl="https://github.com/iambelloopeyemi"
+          hostedUrl="https://cash2go.netlify.app/"
           github="GITHUB"
-          githubUrl="https://github.com/iambelloopeyemi"
+          githubUrl="https://github.com/group2-team2-fdev2/cash2go"
         />
 
         <Project
@@ -29,10 +33,11 @@ export default function Projects() {
             have been featured on some of the biggest tech sites like
             CSS-Tricks, Hostinger, etc & used by thousands of developers
             globally"
+          thumbnail={starWarsMovies}
           view="VIEW"
-          hostedUrl="https://github.com/iambelloopeyemi"
+          hostedUrl="https://starwarsmoviesfranchise.netlify.app"
           github="GITHUB"
-          githubUrl="https://github.com/iambelloopeyemi"
+          githubUrl="https://github.com/iambelloopeyemi/starwars-movie-franchise-app"
         />
 
         <Project
@@ -41,10 +46,11 @@ export default function Projects() {
             have been featured on some of the biggest tech sites like
             CSS-Tricks, Hostinger, etc & used by thousands of developers
             globally"
+          thumbnail={portfolioWebsite}
           view="VIEW"
-          hostedUrl="https://github.com/iambelloopeyemi"
+          hostedUrl="https://iambelloopeyemi.netlify.app/"
           github="GITHUB"
-          githubUrl="https://github.com/iambelloopeyemi"
+          githubUrl="https://github.com/iambelloopeyemi/my-portfolio-website"
         />
       </div>
     </div>
