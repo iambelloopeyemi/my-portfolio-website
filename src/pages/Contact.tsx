@@ -1,12 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
-
-const validationSchema = Yup.object().shape({
-  name: Yup.string().required("Your Name is required"),
-  email: Yup.string().email("Invalid email").required("Your Email is required"),
-  message: Yup.string().required("Your Message is required"),
-});
+import { validationSchema } from '../utils/Schema'
 
 const EMAILJS_SERVICE_ID = "service_us1s3ll";
 const EMAILJS_TEMPLATE_ID = "template_qcd4h7j";
@@ -19,8 +13,6 @@ export default function Contact() {
     message: string;
   }) => {
     try {
-      alert(JSON.stringify(values));
-
       const templateParams = {
         from_name: values.name,
         from_email: values.email,
@@ -41,7 +33,7 @@ export default function Contact() {
     }
   };
   return (
-    <div className="bg-very-light-gray px-16 pt-28 pb-8">
+    <section className="bg-very-light-gray px-16 pt-28 pb-8">
       <div className="mb-5">
         <h1 className="font-bold text-4xl text-center mb-5">CONTACT</h1>
         <h5 className="text-center text-xl">
@@ -126,6 +118,6 @@ export default function Contact() {
           </Form>
         </Formik>
       </section>
-    </div>
+    </section>
   );
 }
