@@ -1,22 +1,39 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
+import emailjs from "@emailjs/browser";
+import { validationSchema } from '../utils/Schema'
 
-const validationSchema = Yup.object().shape({
-  name: Yup.string().required("Your Name is required"),
-  email: Yup.string().email("Invalid email").required("Your Email is required"),
-  message: Yup.string().required("Your Message is required"),
-});
+const EMAILJS_SERVICE_ID = "service_us1s3ll";
+const EMAILJS_TEMPLATE_ID = "template_qcd4h7j";
+const EMAILJS_PUBLIC_KEY = "3KaWlGfqiidm4CWPJ";
 
 export default function Contact() {
-  const handleSubmit = (values: {
+  const handleSubmit = async (values: {
     name: string;
     email: string;
     message: string;
   }) => {
-    alert(JSON.stringify(values));
+    try {
+      const templateParams = {
+        from_name: values.name,
+        from_email: values.email,
+        message: values.message,
+      };
+
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+      console.log("Email sent successfully!", response);
+      alert("Email sent successfully!");
+    } catch (error) {
+      console.error("Failed to send email.", error);
+      alert("Failed to send email.");
+    }
   };
   return (
-    <div className="bg-very-light-gray px-16 pt-28 pb-8">
+    <section className="bg-very-light-gray px-16 pt-28 pb-8">
       <div className="mb-5">
         <h1 className="font-bold text-4xl text-center mb-5">CONTACT</h1>
         <h5 className="text-center text-xl">
@@ -35,13 +52,9 @@ export default function Contact() {
           onSubmit={handleSubmit}
         >
           <Form className="bg-white drop-shadow rounded w-225 p-10">
-            <div className="mb-5">
-              <label
-                htmlFor="name"
-                className="block font-semibold text-sm mb-2"
-              >
-                Name
-              </label>
+            <label className="mb-5">
+              <span className="block font-semibold text-sm mb-2">Name</span>
+
               <div className="bg-very-very-light-gray rounded w-200 p-5">
                 <ErrorMessage
                   name="name"
@@ -56,14 +69,11 @@ export default function Contact() {
                   className="block bg-very-very-light-gray outline-0 rounded font-semibold h-6 w-187.5"
                 />
               </div>
-            </div>
-            <div className="mb-5">
-              <label
-                htmlFor="email"
-                className="block font-semibold text-sm mb-2"
-              >
-                Email
-              </label>
+            </label>
+
+            <label className="mb-5">
+              <span className="block font-semibold text-sm mb-2">Email</span>
+
               <div className="bg-very-very-light-gray rounded w-200 p-5">
                 <ErrorMessage
                   name="email"
@@ -78,14 +88,10 @@ export default function Contact() {
                   className="block bg-very-very-light-gray outline-0 rounded font-semibold h-6 w-187.5"
                 />
               </div>
-            </div>
-            <div className="mb-5">
-              <label
-                htmlFor="message"
-                className="block font-semibold text-sm mb-2"
-              >
-                Message
-              </label>
+            </label>
+
+            <label className="mb-5">
+              <span className="block font-semibold text-sm mb-2">Message</span>
               <div className="bg-very-very-light-gray rounded w-200 p-5">
                 <ErrorMessage
                   name="message"
@@ -100,7 +106,7 @@ export default function Contact() {
                   className="block bg-very-very-light-gray outline-0 rounded font-semibold h-32 w-187.5"
                 />
               </div>
-            </div>
+            </label>
             <div className="flex justify-end pr-5">
               <button
                 type="submit"
@@ -112,6 +118,6 @@ export default function Contact() {
           </Form>
         </Formik>
       </section>
-    </div>
+    </section>
   );
 }
