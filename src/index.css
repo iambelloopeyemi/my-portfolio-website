@@ -19,6 +19,14 @@
 }
 
 @layer components {
+  .hero {
+    background: linear-gradient(
+        to right,
+        rgba(245, 245, 245, 0.8),
+        rgba(245, 245, 245, 0.8)
+      ),
+      url("./assets/hero.svg");
+  }
   .navlink {
     @apply px-7 py-5 font-semibold uppercase hover:text-violet-blue hover:scale-105;
   }
@@ -56,4 +64,3 @@
     @apply text-red-500 text-sm;
   }
 }
-

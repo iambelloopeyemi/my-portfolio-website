@@ -6,9 +6,6 @@ export default {
       primary: ["Source Sans 3", "sans-serif"],
     },
     extend: {
-      backgroundImage: {
-        hero: "linear-gradient(to right, rgba(245,245,245,.8), rgba(245,245,245,.8)), url('./src/assets/hero.svg')",
-      },
       colors: {
         "anti-flash-white": "#F0F0F0",
         "dim-gray": "#716A6A",
