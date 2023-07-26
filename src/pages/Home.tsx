@@ -1,20 +1,21 @@
 import Sidebar from "../components/Sidebar";
-import Button from "../components/Button";
+import Button from "../components/InternalLink";
 
 export default function Home() {
   return (
-    <section className="bg-hero-pattern h-200 grid justify-center items-center">
+    <section className="h-[50rem] bg-hero flex flex-col items-center justify-center">
       <Sidebar />
-      <article className="w-225 h-75 grid justify-items-center place-content-between">
-        <h1 className="font-extrabold text-6xl">Hey, I'm Opeyemi Bello</h1>
+      <article className="text-center grid gap-20">
+        <h1 className="text-5xl font-extrabold">Hey, I'm Opeyemi Bello</h1>
         <h5 className="text-xl">
           A Frontend developer with finesse for building functional and
-          responsive web software applications
+          responsive web applications
         </h5>
         <Button
-          name="PROJECTS"
+          title="PROJECTS"
           url="/projects"
-          backgroundColor="#FACF0F"
+          backgroundColor="#3943B7"
+          color="#FFF"
           border="none"
         />
       </article>

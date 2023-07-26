@@ -4,11 +4,12 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    height: 100%;
-  }
   body {
     font-family: theme("fontFamily.primary");
+    color: theme("colors.night");
+  }
+  #root {
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
   }
@@ -17,8 +18,42 @@
   }
 }
 
-/* @layer components {
-  .input {
-    @apply block h-6 w-96;
+@layer components {
+  .navlink {
+    @apply px-7 py-5 font-semibold uppercase hover:text-violet-blue hover:scale-105;
   }
-} */
+  .socialmedia {
+    @apply h-8 w-8 hover:scale-105;
+  }
+  .section-header {
+    @apply text-center flex flex-col items-center gap-5 mb-14;
+  }
+  .heading {
+    @apply text-4xl uppercase font-bold;
+  }
+  .subheading {
+    @apply text-xl;
+  }
+  .about-category {
+    @apply text-2xl font-bold mb-8;
+  }
+  .article {
+    @apply text-dim-gray text-justify leading-6 grid gap-2 mb-8;
+  }
+  .skill-icon {
+    @apply h-12 w-12 hover:cursor-pointer hover:scale-105;
+  }
+  .label {
+    @apply block text-sm font-semibold mb-2;
+  }
+  .input-wrapper {
+    @apply w-[50rem] p-5 bg-seasalt rounded;
+  }
+  .input {
+    @apply block w-[45rem] h-6 bg-seasalt rounded outline-0 font-semibold;
+  }
+  .error {
+    @apply text-red-500 text-sm;
+  }
+}
+

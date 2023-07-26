@@ -1,29 +1,26 @@
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { SocialMedia } from "../components/SocialMedia";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-black text-white py-10">
-      <div className="grid justify-center gap-5">
-        <div className="flex justify-center items-center gap-5">
-          <a href="#">
-            <FaGithub className="h-8 w-8" />
+    <footer className="bg-night py-10 text-white grid gap-5">
+      <div className="flex justify-center items-center gap-5">
+        {SocialMedia.map(({ id, link, icon }) => (
+          <a key={id} href={link} target="_blank">
+            {icon}
           </a>
-          <a href="#">
-            <FaLinkedin className="h-8 w-8" />
-          </a>
-          <a href="#">
-            <FaTwitter className="h-8 w-8" />
-          </a>
-        </div>
-        <p className="text-sm flex items-center gap-1">
-          <span>©</span>
-          copyright {currentYear}. Made by
-          <a href="#" className="font-bold underline">
-            Opeyemi Bello
-          </a>
-        </p>
+        ))}
       </div>
+      <p className="text-sm flex items-center justify-center gap-2">
+        © copyright {currentYear}. Made by
+        <a
+          href="https://iambelloopeyemi.netlify.app"
+          target="_blank"
+          className="font-bold underline hover:scale-105"
+        >
+          Opeyemi Bello
+        </a>
+      </p>
     </footer>
   );
 }

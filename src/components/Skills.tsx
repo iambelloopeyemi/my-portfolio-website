@@ -6,51 +6,53 @@ import { HiTerminal } from "react-icons/hi";
 export const SkillList = [
   {
     id: 0,
-    icon: <FaHtml5 className="h-12 w-12" />,
+    icon: <FaHtml5 className="skill-icon" />,
   },
   {
     id: 1,
-    icon: <IoLogoCss3 className="h-12 w-12" />,
+    icon: <IoLogoCss3 className="skill-icon" />,
   },
   {
     id: 2,
-    icon: <FaSass className="h-12 w-12" />,
+    icon: <FaSass className="skill-icon" />,
   },
   {
     id: 3,
-    icon: <SiTailwindcss className="h-12 w-12" />,
+    icon: <SiTailwindcss className="skill-icon" />,
   },
   {
     id: 4,
-    icon: <SiJavascript className="h-12 w-12" />,
+    icon: <SiJavascript className="skill-icon" />,
   },
   {
     id: 5,
-    icon: <FaReact className="h-12 w-12" />,
+    icon: <FaReact className="skill-icon" />,
   },
   {
     id: 6,
-    icon: <SiTypescript className="h-12 w-12" />,
+    icon: <SiTypescript className="skill-icon" />,
   },
   {
     id: 7,
-    icon: <FaGitAlt className="h-12 w-12" />,
+    icon: <FaGitAlt className="skill-icon" />,
   },
   {
     id: 8,
-    icon: <FaGithub className="h-12 w-12" />,
+    icon: <FaGithub className="skill-icon" />,
   },
   {
     id: 8,
-    icon: <HiTerminal className="h-12 w-12" />,
+    icon: <HiTerminal className="skill-icon" />,
   },
 ];
 
 export default function Skills() {
   return (
-    <ul className="flex flex-wrap gap-5 text-davy-grey">
-      {SkillList.map((item) => (
-        <li key={item.id}>{item.icon}</li>
+    <ul className="flex flex-wrap gap-5">
+      {SkillList.map(({ id, icon }) => (
+        <li key={id} className="text-night">
+          {icon}
+        </li>
       ))}
     </ul>
   );

@@ -1,11 +1,11 @@
-// import ButtonVariant from "../components/ButtonVariant";
-import ViewButton from "./Button";
-import GitHubButton from "./Button";
+import ViewButton from "./ExternalLink";
+import GitHubButton from "./ExternalLink";
 
 interface ProjectProps {
-  subTitle: string;
+  title: string;
   article: string;
   thumbnail: string;
+  alt: string;
   view: string;
   hostedUrl: string;
   github: string;
@@ -13,43 +13,42 @@ interface ProjectProps {
 }
 
 export default function Project({
-  subTitle,
+  title,
   article,
   thumbnail,
+  alt,
   view,
   hostedUrl,
   github,
   githubUrl,
 }: ProjectProps) {
   return (
-    <div className="grid grid-flow-col grid-cols-2 gap-10 mb-5">
-      <section className="border">
-        <div className="h-80 w-80">
-          <img className="h-full w-full object-contain" src={thumbnail} alt="" />
+    <div className="grid grid-cols-2 gap-8 mb-16">
+      <div className="w-fit h-fit border rounded shadow-lg hover:cursor-pointer hover:scale-105">
+        <img className="h-full w-full object-fill" src={thumbnail} alt={alt} />
+      </div>
+      <div className="w-fit h-fit">
+        <h3 className="text-xl font-bold mb-5">{title}</h3>
+        <article className="article">
+          {article}
+        </article>
+        <div className="flex items-center gap-5">
+          <ViewButton
+            title={`${view}`}
+            url={`${hostedUrl}`}
+            backgroundColor="#3943B7"
+            color="#FFF"
+            border="none"
+          />
+          <GitHubButton
+            title={`${github}`}
+            url={`${githubUrl}`}
+            backgroundColor="none"
+            color="#3943B7"
+            border="1px solid #3943B7"
+          />
         </div>
-      </section>
-      <section>
-        <div className="h-80 w-80">
-          <h3 className="font-bold text-xl mb-5">{subTitle}</h3>
-          <article className="text-davy-grey text-justify leading-6 mb-5">
-            {article}
-          </article>
-          <div className="flex items-center gap-5">
-            <ViewButton
-              name={`${view}`}
-              url={`${hostedUrl}`}
-              backgroundColor="#FACF0F"
-              border="none"
-            />
-            <GitHubButton
-              name={`${github}`}
-              url={`${githubUrl}`}
-              backgroundColor="none"
-              border="1px solid #FACF0F"
-            />
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 }
