@@ -16,9 +16,6 @@
   main {
     flex: 1;
   }
-}
-
-@layer components {
   .hero {
     background: linear-gradient(
         to right,
@@ -27,9 +24,9 @@
       ),
       url("./assets/hero.svg");
   }
-  .navlink {
-    @apply px-7 py-5 font-semibold uppercase hover:text-violet-blue hover:scale-105;
-  }
+}
+
+@layer components {
   .socialmedia {
     @apply h-8 w-8 hover:scale-105;
   }

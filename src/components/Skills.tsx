@@ -41,7 +41,7 @@ export const SkillList = [
     icon: <FaGithub className="skill-icon" />,
   },
   {
-    id: 8,
+    id: 9,
     icon: <HiTerminal className="skill-icon" />,
   },
 ];

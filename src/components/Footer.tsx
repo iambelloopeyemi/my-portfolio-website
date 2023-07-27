@@ -3,7 +3,7 @@ import { SocialMedia } from "../components/SocialMedia";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-night py-10 text-white grid gap-5">
+    <footer className="bg-night px-2 py-10 text-white grid gap-5">
       <div className="flex justify-center items-center gap-5">
         {SocialMedia.map(({ id, link, icon }) => (
           <a key={id} href={link} target="_blank">
@@ -11,8 +11,8 @@ export default function Footer() {
           </a>
         ))}
       </div>
-      <p className="text-sm flex items-center justify-center gap-2">
-        © copyright {currentYear}. Made by
+      <div className="text-sm text-center">
+        <span>© copyright {currentYear}. Made by </span>
         <a
           href="https://iambelloopeyemi.netlify.app"
           target="_blank"
@@ -20,7 +20,7 @@ export default function Footer() {
         >
           Opeyemi Bello
         </a>
-      </p>
+      </div>
     </footer>
   );
 }

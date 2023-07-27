@@ -3,11 +3,11 @@ import Button from "../components/InternalLink";
 
 export default function Home() {
   return (
-    <section className="h-[50rem] hero flex flex-col items-center justify-center">
+    <section className="h-[50rem] px-2 hero flex flex-col items-center justify-center">
       <Sidebar />
       <article className="text-center grid gap-20">
-        <h1 className="text-5xl font-extrabold">Hey, I'm Opeyemi Bello</h1>
-        <h5 className="text-xl">
+        <h1 className="text-3xl sm:text-5xl font-extrabold">Hey, I'm Opeyemi Bello</h1>
+        <h5 className="subheading">
           A Frontend developer with finesse for building functional and
           responsive web applications
         </h5>
