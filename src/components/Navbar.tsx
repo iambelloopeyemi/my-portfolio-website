@@ -42,6 +42,7 @@ export default function Navbar() {
               key={link}
               to={link}
               style={activeStyle}
+              onClick={() => setOpen(!isOpen)}
               className="font-semibold uppercase hover:text-violet-blue hover:scale-105"
             >
               {link}

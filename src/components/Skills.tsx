@@ -48,7 +48,7 @@ export const SkillList = [
 
 export default function Skills() {
   return (
-    <ul className="flex flex-wrap gap-5">
+    <ul className="flex justify-center flex-wrap gap-5">
       {SkillList.map(({ id, icon }) => (
         <li key={id} className="text-night">
           {icon}
