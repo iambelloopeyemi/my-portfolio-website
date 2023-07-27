@@ -23,8 +23,8 @@ export default function Project({
   githubUrl,
 }: ProjectProps) {
   return (
-    <div className="grid grid-cols-2 gap-8 mb-16">
-      <div className="w-fit h-fit border rounded shadow-lg hover:cursor-pointer hover:scale-105">
+    <div className="grid sm:grid-cols-2 gap-3 sm:gap-8 mb-16">
+      <div className=" w-fit h-fit border rounded shadow-lg hover:cursor-pointer hover:scale-105">
         <img className="h-full w-full object-fill" src={thumbnail} alt={alt} />
       </div>
       <div className="w-fit h-fit">
@@ -32,7 +32,7 @@ export default function Project({
         <article className="article">
           {article}
         </article>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center justify-center sm:justify-start gap-5">
           <ViewButton
             title={`${view}`}
             url={`${hostedUrl}`}
