@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 interface ExternalLink {
   title: string;
   url: string;
@@ -16,7 +14,7 @@ export default function ExternalLink({
   border,
 }: ExternalLink) {
   return (
-    <Link to={url} target="_blank">
+    <a href={url} target="_blank">
       <button
         style={{
           backgroundColor: backgroundColor,
@@ -27,6 +25,6 @@ export default function ExternalLink({
       >
         {title}
       </button>
-    </Link>
+    </a>
   );
 }

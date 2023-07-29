@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 interface InternalLink {
   title: string;
   url: string;
@@ -16,17 +14,17 @@ export default function InternalLink({
   border,
 }: InternalLink) {
   return (
-    <Link to={url}>
+    <a href={url}>
       <button
         style={{
           backgroundColor: backgroundColor,
           color: color,
           border: border,
         }}
-        className="px-12 py-3 rounded hover:scale-105 font-bold"
+        className="px-12 py-3 rounded font-bold hover:scale-105"
       >
         {title}
       </button>
-    </Link>
+    </a>
   );
 }

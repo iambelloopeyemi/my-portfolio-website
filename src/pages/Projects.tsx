@@ -4,9 +4,9 @@ import projects from "../data/projects.json";
 
 export default function Projects() {
   return (
-    <section className="bg-anti-flash-white h-fit px-4 sm:px-20 pt-32">
-      <header className="section-header">
-        <h2 className="heading">projects</h2>
+    <section id="projects" className="bg-seasalt h-fit px-5 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-14">
+      <header className="text-center flex flex-col items-center gap-3 sm:gap-5 mb-10 sm:mb-14">
+        <h2 className="text-2xl sm:text-4xl font-bold uppercase">projects</h2>
         <Underline />
       </header>
       <div className="flex flex-col items-center">
