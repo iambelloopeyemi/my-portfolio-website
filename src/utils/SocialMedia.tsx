@@ -4,16 +4,16 @@ export const SocialMedia = [
   {
     id: 0,
     link: "https://github.com/iambelloopeyemi",
-    icon: <FaGithub className="socialmedia" />,
+    icon: <FaGithub className="h-8 w-8 hover:scale-105" />,
   },
   {
     id: 1,
     link: "https://www.linkedin.com/in/iambelloopeyemi",
-    icon: <FaLinkedin className="socialmedia" />,
+    icon: <FaLinkedin className="h-8 w-8 hover:scale-105" />,
   },
   {
     id: 2,
     link: "https://twitter.com/iambelloopeyemi",
-    icon: <FaTwitter className="socialmedia" />,
+    icon: <FaTwitter className="h-8 w-8 hover:scale-105" />,
   },
 ];

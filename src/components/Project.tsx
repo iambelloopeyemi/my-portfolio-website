@@ -23,13 +23,13 @@ export default function Project({
   githubUrl,
 }: ProjectProps) {
   return (
-    <div className="grid sm:grid-cols-2 gap-3 sm:gap-8 mb-16">
-      <div className=" w-fit h-fit border rounded shadow-lg hover:cursor-pointer hover:scale-105">
+    <div className="grid sm:grid-cols-2 gap-4 sm:gap-8 mb-16">
+      <div className="w-fit h-fit border rounded shadow-lg hover:cursor-pointer hover:scale-105">
         <img className="h-full w-full object-fill" src={thumbnail} alt={alt} />
       </div>
       <div className="w-fit h-fit">
-        <h3 className="text-xl font-bold mb-5">{title}</h3>
-        <article className="article">
+        <h3 className="text-xl font-bold mb-3 sm:mb-5">{title}</h3>
+        <article className="text-dim-gray text-justify leading-6 grid gap-2 mb-8 sm:mb-10">
           {article}
         </article>
         <div className="flex items-center justify-center sm:justify-start gap-5">
