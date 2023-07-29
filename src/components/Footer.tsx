@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="bg-night px-2 py-10 text-white grid gap-5">
       <div className="flex justify-center items-center gap-5">
-        {SocialMedia.map(({ id, link, icon }) => (
-          <a href={link} key={id} target="_blank">
+        {SocialMedia.map(({ link, icon }, index) => (
+          <a href={link} key={index} target="_blank">
             {icon}
           </a>
         ))}

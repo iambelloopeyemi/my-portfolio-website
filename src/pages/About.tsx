@@ -34,8 +34,8 @@ export default function About() {
             My Skills
           </h3>
           <ul className="flex justify-center sm:justify-start flex-wrap gap-5">
-            {Skills.map(({ id, icon }) => (
-              <li key={id} className="text-night">
+            {Skills.map(({ icon }, index) => (
+              <li key={index} className="text-night">
                 {icon}
               </li>
             ))}
