@@ -25,5 +25,14 @@
     "alt": "portfolio website",
     "hostedUrl": "https://iambelloopeyemi.netlify.app",
     "githubUrl": "https://github.com/iambelloopeyemi/my-portfolio-website"
+  },
+  {
+    "id": 3,
+    "title": "Todo List",
+    "article": "This is a todo list application built with vanilla JavaScript. It has the basic functions of setting, editing and deleting tasks",
+    "thumbnail": "images/vanillajs_todo_list.png",
+    "alt": "todo list",
+    "hostedUrl": "https://vanillajs-todolistapp.netlify.app/",
+    "githubUrl": "https://github.com/iambelloopeyemi/todo-list-app-with-vanillajs"
   }
 ]
